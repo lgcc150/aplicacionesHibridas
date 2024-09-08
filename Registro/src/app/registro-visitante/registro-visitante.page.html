@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro Visitante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container border border-white pt-4">
+    <div class="row row-cols-1 row-cols-sm-5 row-cols-md-2 g-2">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="text-center text-white">Datos del Visitante</ion-card-title>
+        </ion-card-header>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-12" style="display: flex; justify-content: center; align-items: center;">
+              <ion-card>
+                <ion-card-content>
+                  <ion-item>
+                    <ion-select placeholder="Seleccionar dispositivo" #listaDeDispositivos></ion-select>
+                    <p #estado></p>
+                  </ion-item>
+  
+                  <video #video muted="muted" style="width: 100%;"></video>
+                  <canvas #canvas style="display: none;"></canvas>
+  
+                  <ion-button expand="full" color="success" (click)="takePhoto()">
+                    <ion-icon slot="start" name="camera"></ion-icon>
+                    Tomar foto
+                  </ion-button>
+                  <ion-button expand="full" color="secondary" (click)="resumeVideo()">
+                    <ion-icon slot="start" name="image"></ion-icon>
+                    Nueva foto
+                  </ion-button>
+                </ion-card-content>
+              </ion-card>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <ion-card-content>
+          <form (ngSubmit)="guardarVisitante()">
+            <ion-item>
+              <ion-label position="floating">Num. Documento</ion-label>
+              <ion-input type="number" [(ngModel)]="numeroDocumento" name="numeroDocumento" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Apellidos</ion-label>
+              <ion-input type="text" [(ngModel)]="apellidoVisitante" name="apellidoVisitante" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Nombres</ion-label>
+              <ion-input type="text" [(ngModel)]="nombreVisitante" name="nombreVisitante" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Genero</ion-label>
+              <ion-select [(ngModel)]="genero" name="genero" required>
+                <ion-select-option *ngFor="let option of generos" [value]="option.value">
+                  {{ option.label }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Teléfono</ion-label>
+              <ion-input type="tel" [(ngModel)]="telefono" name="telefono" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Parentesco</ion-label>
+              <ion-input type="text" [(ngModel)]="parentezco" name="parentezco" required></ion-input>
+            </ion-item>
+
+            <!-- Línea Horizontal -->
+            <ion-item lines="none">
+              <ion-label></ion-label>
+              <ion-segment>
+                <ion-segment-button>
+                  <ion-icon name="remove-outline"></ion-icon>
+                </ion-segment-button>
+              </ion-segment>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Cama</ion-label>
+              <ion-input type="text" [(ngModel)]="cama" name="cama" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Pabellón</ion-label>
+              <ion-input type="text" [(ngModel)]="pabellon" name="pabellon" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Cedula Paciente</ion-label>
+              <ion-input type="text" [(ngModel)]="cedulaPaciente" name="cedulaPaciente" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Nombre paciente</ion-label>
+              <ion-input type="text" [(ngModel)]="nombrePaciente" name="nombrePaciente" required></ion-input>
+            </ion-item>
+
+            
+
+            <ion-button expand="full" type="submit" color="success">
+              <ion-icon slot="start" name="checkmark"></ion-icon>
+              Enviar
+            </ion-button>
+          </form>
+
+          <ion-button expand="full" color="warning" (click)="goMostrarPaciente()">
+            <ion-icon slot="start" name="arrow-back"></ion-icon>
+            Regresar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      
+    </div>
+  </div>
+</ion-content>

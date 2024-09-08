@@ -1,0 +1,23 @@
+ion-grid {
+    width: 100%;
+    overflow-x: auto;
+}
+  
+ion-col {
+    white-space: nowrap;
+}
+
+.dark-card {
+    --background: #a9fcfc; /* Color claro */
+}
+  
+.light-card {
+    --background: #ffffff; /* Color oscuro */
+}
+
+.large-avatar {
+    --width: 800px; 
+    --height: 800px; 
+  }
+
+  

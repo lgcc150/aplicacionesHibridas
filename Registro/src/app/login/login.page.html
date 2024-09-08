@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="tarjetaLogin">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100vh;">
+        <ion-col size="12" size-md="4">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Login</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <ion-item>
+                  <ion-label position="floating" class="labelDatos">Usuario:</ion-label>
+                  <ion-input type="text" name="username" id="username" placeholder="Digite su usuario" required [(ngModel)]="username"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="floating" class="labelDatos">Contraseña:</ion-label>
+                  <ion-input type="password" name="password" id="password" placeholder="Digite su contraseña" required [(ngModel)]="password"></ion-input>
+                </ion-item>
+
+                <ion-button expand="full" type="submit" color="success">Entrar al Sistema</ion-button>
+
+                <ion-item lines="none">
+                  <ion-icon name="help-circle-outline" slot="start"></ion-icon>
+                  <ion-label>
+                    ¿Requieres ayuda? Contacta a <strong>tecnologia&#64;fhsc.org.co</strong>
+                  </ion-label>
+                </ion-item>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

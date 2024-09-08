@@ -1,0 +1,53 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.content-container{
+  margin-left: 8%;
+}
+
+.ion-margin{
+  margin-right: 8%;
+}
+
+.imagenIni{
+  width: 100px;   /* Ajusta el ancho como desees */
+  height: 100px;  /* Ajusta la altura como desees */
+}
+
+.cardIni{
+  width: 80%;
+  height: 200px;
+  
+  @media (min-width: 600px) {
+    width: 100%;
+    height: 200px;
+  }
+  
+  @media (min-width: 900px) {
+    width: 80%;
+    height: 200px;
+  }
+}
+

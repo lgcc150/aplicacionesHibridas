@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Administrador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+
+  <ion-button color="primary">
+    Crear usuario
+  </ion-button>
+
+  <ion-list>
+    <ion-card *ngFor="let paciente of pacientes; let i = index" [ngClass]="{'dark-card': i % 2 === 0, 'light-card': i % 2 !== 0}">
+      <ion-card-header>
+        <ion-card-title><strong>Visitante {{ paciente.Documento }}</strong></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        
+        <img [src]="paciente.Foto" alt="Foto del visitante" style="width: 20%; height: auto;">
+        <p><strong>Nombre:</strong> {{ paciente.Nombre }} {{ paciente.Apellido }}</p>
+        <p><strong>Documento:</strong> {{ paciente.Documento }}</p>
+        <p><strong>Genero:</strong> {{ paciente.Genero }}</p>
+        <p><strong>Telefono:</strong> {{ paciente.Telefono }}</p>
+        <p><strong>Parentesco:</strong> {{ paciente.Parentesco }}</p>
+        <p><strong>Nombre del Paciente:</strong> {{ paciente.Nombre_Paciente }}</p>
+        <p><strong>Cedula del Paciente:</strong> {{ paciente.Cedula_Paciente }}</p>
+        <p><strong>Pabellon:</strong> {{ paciente.Pabellon }}</p>
+        <p><strong>Cama:</strong> {{ paciente.Cama }}</p>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button color="medium" (click)="goHome()">
+          <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+          Cerrar Sesión
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
